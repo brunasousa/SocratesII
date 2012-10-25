@@ -33,7 +33,7 @@ class Person < ActiveRecord::Base
 
   has_one :profile, :dependent => :destroy
   delegate :last_name, :image_url, :tag_string, :bio, :location,
-           :gender, :birthday, :formatted_birthday, :tags, :searchable,
+           :gender, :birthday, :formatted_birthday, :tags, :searchable, :teacher,
            to: :profile
   accepts_nested_attributes_for :profile
 

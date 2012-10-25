@@ -39,7 +39,7 @@ class User < ActiveRecord::Base
 
   has_one :person, :foreign_key => :owner_id
   delegate :guid, :public_key, :posts, :photos, :owns?, :image_url,
-           :diaspora_handle, :name, :public_url, :profile, :url,
+           :diaspora_handle, :name, :public_url, :profile, :url, :teacher,
            :first_name, :last_name, :gender, :participations, to: :person
   delegate :id, :guid, to: :person, prefix: true
 

@@ -22,7 +22,11 @@
     = include_mixpanel
 
     = include_base_css_framework
-    = stylesheet_link_tag 'login', 'application', 'default'
+
+    -if current_user.teacher == true
+      = stylesheet_link_tag 'login', 'application_teacher', 'default'
+    -else
+      = stylesheet_link_tag 'login', 'application', 'default'
 
     - if rtl?
       = stylesheet_link_tag :rtl, :media => 'all'
